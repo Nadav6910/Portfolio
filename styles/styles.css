@@ -1,0 +1,391 @@
+/* vars */
+:root {
+    --graywhite: rgb(207, 207, 207);
+    --darkgray: #110f0f;
+  }
+
+/* global rules */
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: var(--darkgray);
+    overflow: hidden;
+    cursor: url("../assets/circle.png"), default;
+    box-sizing: border-box;
+}
+
+/* div with the whole body of the website for particles effect */
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-color: var(--darkgray);
+    z-index: -999;
+}
+
+/* header handle logo and navs */
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 8em;
+}
+
+
+/* logo div */
+.logo {
+    display: flex;
+    width: 18em;
+    height: 100%;
+}
+
+/* reduce logo size on phone devices */
+@media screen and (max-width: 430px) {
+    .logo {
+        width: 14em;
+    }
+  }
+
+/* logo full svg */
+.logo .logo-svg {
+    padding-top: 1em;
+    padding-left: 1.5em;
+    animation: popInLeft ease 800ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* logo svg pops in from left on page load animation */
+@keyframes popInLeft {
+    0% {
+        margin-left: -12em;
+    }
+    100% {
+        margin-top: 0;
+     }
+}
+
+/* logo svg text */
+.logo #logo-text {
+    stroke: var(--graywhite);
+}
+
+/* header nav container  */
+.top-nav-container {
+    display: flex;
+    align-items: center;
+}
+
+/* header nav container list */
+.top-nav-list {
+    color: var(--graywhite);
+    list-style: none;
+    padding-right: 1.5em;
+    animation: popInDown ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* top nav list pops in from above on page load animation */
+@keyframes popInDown {
+    0% {
+        margin-top: -20em;
+    }
+    100% {
+        margin-top: 0;
+     }
+}
+
+/* header nav container list items */
+.top-nav-item {
+    position: relative;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    opacity: 0.9;
+    padding-left: 0.6em;
+}
+
+/* header nav container list items on hover */
+.top-nav-item:hover {
+    background: linear-gradient(to right,#ff9966, #ff5e62);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* nav list item on hover added class for animation */
+.hovered {
+    animation: zoomInOut 1.5s linear infinite;
+}
+
+/* zoom in out animation for nav list item on hover added class */
+@keyframes zoomInOut {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+/* testttttt */
+
+/* hide hamburger manu and drawer div when screen width is bigger then 781px */
+@media screen and (min-width: 781px) {
+  .hamburger-icon {
+    display: none;
+  }
+  
+  #nav {
+    display: none;
+  }
+}
+
+/* create hamburger manu and drawer div when screen width is smaller then 780px */
+@media screen and (max-width: 780px) {
+  .top-nav-list {
+    display: none;
+  }
+
+  /* hamburger manu lines */
+  .icon-1, .icon-2, .icon-3 {
+    width: 32px;
+    height: 3px;
+    background-color: black;
+    transition: all 320ms cubic-bezier(0.4, 0.98, 0.52, 1.8);
+  }
+  
+  .icon-1 {
+    transform: translateY(-8px);
+    /* animation-delay: 100ms; */
+    position: relative;
+  }
+  
+  .icon-3 {
+    transform: translateY(8px);
+    /* animation-delay: 250ms; */
+    position: relative;
+  }
+  
+  .hamburger-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    margin-right: 1.5em;
+    z-index: 1000;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .hamburger-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon-1.a {
+    transform: rotate(40deg);
+  }
+  
+  .icon-3.b {
+    transform: rotate(-40deg);
+  }
+  
+  .icon-2.c {
+    opacity: 0;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+    100% {
+      width: -50%;
+      opacity: 1;
+    }
+  }
+  nav {
+    background: rgb(80 74 74 / 30%);
+    backdrop-filter: saturate(20%) blur(4px);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    padding-top: 12em;
+    height: 100%;
+    width: 0%;
+    z-index: 10;
+    opacity: 0;
+    transition: all 600ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+    transition-delay: 100ms;
+  }
+  nav ul {
+    margin: 0;
+    position: absolute;
+    display: none;
+  }
+  nav ul li {
+    list-style: none;
+    font-size: 24px;
+    color: #fff;
+    line-height: 2.2;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+  }
+  nav.show {
+    width: 50%;
+    opacity: 1;
+  }
+
+  nav.show ul {
+    display: block;
+  }
+  
+  .dark-blue {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(72 66 66 / 42%);
+    backdrop-filter: saturate(20%) blur(4px);
+    height: 100%;
+    width: 0%;
+    transition: all 500ms cubic-bezier(0.62, 0.04, 0.3, 1.8);
+    transition-delay: 50ms;
+    z-index: 5;
+    opacity: 1;
+  }
+  
+  .dark-blue.slide {
+    width: 50%;
+    opacity: 1;
+  }
+  
+  @keyframes shotup {
+    0% {
+      transform: translateY(300%);
+      opacity: 0;
+    }
+    90% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
+
+/* header nav container list */
+.top-nav-list-hamburger {
+  color: var(--graywhite);
+  list-style: none;
+  padding-left: 0;
+  animation: popInDownHamburger ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.top-nav-list-hamburger li {
+  display: block;
+}
+
+/* top nav list pops in from above on page load animation */
+@keyframes popInDownHamburger {
+  0% {
+      opacity: 0;
+  }
+  100% {
+    opacity: 1;
+   }
+}
+
+/* reduce right and left padding for logo and manu when screen width is smaller then 382px */
+@media screen and (max-width: 382px) {
+  .hamburger-icon {
+    margin-right: 0.7em;
+  }
+
+  .logo .logo-svg {
+    padding-left: 0.7em;
+  }
+}
+
+/* end of header handle *** */
+
+/* introduction section begining */
+
+/* introduction section container */
+.introduction {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 20em;
+    justify-content: center;
+    margin-top: 7em;
+}
+
+/* div that holds the introduction animation*/
+.my-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25em;
+    background: rgb(30 29 29 / 30%);
+    backdrop-filter: saturate(20%) blur(4px);
+    box-shadow: 0 0 1rem 0 rgb(225 208 208 / 20%);
+    border-radius: 5px;
+}
+
+/* introduction headline */
+.headline {
+  color: var(--graywhite);
+  letter-spacing: 0.02em;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+/* typing animation sentences */
+.typing {
+    letter-spacing: 0.03em;
+    font-size: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(to right,#ff9966, #ff5e62);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* typer line */
+.typing::after {
+    content: "";
+    border-right: 0.1em solid var(--graywhite);
+    margin-left: 0.05em;
+    -webkit-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+  }
+  
+  /* typer blink animation */
+  @-webkit-keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
