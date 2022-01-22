@@ -9,7 +9,7 @@ html, body {
     margin: 0;
     height: 100%;
     background-color: var(--darkgray);
-    overflow: hidden;
+    overflow: scroll;
     cursor: url("../assets/circle.png"), default;
     box-sizing: border-box;
 }
@@ -20,6 +20,7 @@ html, body {
     height: 100%;
     background-color: var(--darkgray);
     z-index: -999;
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
 }
 
 /* header handle logo and navs */
@@ -326,7 +327,7 @@ header {
     width: 100%;
     height: 20em;
     justify-content: center;
-    margin-top: 7em;
+    margin-top: 4em;
 }
 
 /* div that holds the introduction animation*/
@@ -389,3 +390,108 @@ header {
       opacity: 1;
     }
   }
+
+  /* see my work button */
+  .see-my-work-btn-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    margin-top: 28em;
+    justify-content: center;
+  }
+
+  a {
+    text-decoration: none;
+    border: 3px solid;
+    border-image-source: linear-gradient(to right,#ff9966, #ff5e62);
+    color: transparent;
+    padding: 40px 80px;
+    font-size: 28px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 5px;
+    transition: all 0.5s;
+    position: relative;
+    width: 8.3em;
+    height: 0.5em;
+    border-image-slice: 1;
+    cursor: url("../assets/circle.png"), default;
+  }
+
+  /* handling btn size when screen width is smaller then 405px */
+  @media screen and (max-width: 405px) {
+    .see-my-work-btn-container {
+      margin-top: 26.5em;
+    }
+
+    a {
+      width: 5em;
+    }
+  }
+
+  @media screen and (max-height: 665px) {
+    .see-my-work-btn-container {
+      margin-top: 23.5em;
+    }
+
+    .introduction {
+      margin-top: 1.5em;
+    }
+  }
+
+  a:before {
+    content: "See My Work";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--graywhite);
+    background: rgb(34, 34, 34);
+    font-size: 28px;
+    top: 0;
+    left: 100%;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    transition: all 1s;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform: scale(0) rotatey(0);
+    opacity: 0;
+  }
+
+  a:hover:before {
+    transform: scale(1) rotatey(360deg);
+    left: 0;
+    opacity: 1;
+  }
+
+  a:after {
+    content: "See My Work";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--graywhite);
+    background: rgb(30 29 29 / 30%);
+    backdrop-filter: saturate(20%) blur(4px);
+    box-shadow: 0 0 1rem 0 rgb(225 208 208 / 20%);
+    border-radius: 5px;
+    font-size: 28px;
+    top: 0;
+    left: 0;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    transition: all 1s;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform: scale(1) rotatey(0);
+    opacity: 1;
+  }
+
+  a:hover:after {
+    transform: scale(0) rotatey(360deg);
+    left: -100%;
+    opacity: 0;
+  }
+
+  /* end of see my work btn code */
+
