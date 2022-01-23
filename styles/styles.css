@@ -12,15 +12,16 @@ html, body {
     overflow: scroll;
     cursor: url("../assets/circle.png"), default;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* div with the whole body of the website for particles effect */
 #particles-js {
     width: 100%;
-    height: 100%;
+    height: 101vh;
     background-color: var(--darkgray);
     z-index: -999;
-    /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
+    /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); */
 }
 
 /* header handle logo and navs */
@@ -30,6 +31,15 @@ header {
     height: 8em;
 }
 
+/* cancel a tag defult values */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  cursor: inherit;
+}
 
 /* logo div */
 .logo {
@@ -125,7 +135,20 @@ header {
     100% { transform: scale(1); }
   }
 
-/* testttttt */
+/* hamburger manu nav */
+.hamburger-icon {
+    position: fixed;
+    right: -0.6em;
+    margin-right: 0px;
+}
+
+#nav {
+  position: fixed;
+}
+
+#blue {
+  position: fixed;
+}
 
 /* hide hamburger manu and drawer div when screen width is bigger then 781px */
 @media screen and (min-width: 781px) {
@@ -307,9 +330,9 @@ header {
 
 /* reduce right and left padding for logo and manu when screen width is smaller then 382px */
 @media screen and (max-width: 382px) {
-  .hamburger-icon {
+  /* .hamburger-icon {
     margin-right: 0.7em;
-  }
+  } */
 
   .logo .logo-svg {
     padding-left: 0.7em;
@@ -400,7 +423,7 @@ header {
     justify-content: center;
   }
 
-  a {
+  #view-work-btn {
     text-decoration: none;
     border: 3px solid;
     border-image-source: linear-gradient(to right,#ff9966, #ff5e62);
@@ -418,12 +441,12 @@ header {
   }
 
   /* handling btn size when screen width is smaller then 405px */
-  @media screen and (max-width: 405px) {
+  @media screen and (max-width: 415px) {
     .see-my-work-btn-container {
       margin-top: 26.5em;
     }
 
-    a {
+    #view-work-btn {
       width: 5em;
     }
   }
@@ -438,7 +461,29 @@ header {
     }
   }
 
-  a:before {
+  @media screen and (min-height: 745px) {
+    .see-my-work-btn-container {
+      margin-top: 29.5em;
+    }
+  }
+
+  @media screen and (min-height: 860px) {
+    .see-my-work-btn-container {
+      margin-top: 31em;
+    }
+  }
+
+  @media screen and (min-height: 1100px) {
+    .see-my-work-btn-container {
+      margin-top: 40em;
+    }
+
+    .introduction {
+      margin-top: 10em;
+    }
+  }
+
+  #view-work-btn:before {
     content: "See My Work";
     display: flex;
     justify-content: center;
@@ -458,13 +503,13 @@ header {
     opacity: 0;
   }
 
-  a:hover:before {
+  #view-work-btn:hover:before {
     transform: scale(1) rotatey(360deg);
     left: 0;
     opacity: 1;
   }
 
-  a:after {
+  #view-work-btn:after {
     content: "See My Work";
     display: flex;
     justify-content: center;
@@ -487,7 +532,7 @@ header {
     opacity: 1;
   }
 
-  a:hover:after {
+  #view-work-btn:hover:after {
     transform: scale(0) rotatey(360deg);
     left: -100%;
     opacity: 0;

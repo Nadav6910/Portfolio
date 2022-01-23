@@ -10,7 +10,7 @@ body {
   overflow: hidden;
   /* background: -webkit-gradient(linear, left top, right top, from(#ff9966), to(#ff5e62)); */
   background: linear-gradient(to right, #ff9966, #ff5e62);
-  /* clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%); */
+  /* clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%); */
 }
 
 /* @media screen and (max-width: 520px) {
@@ -609,4 +609,14 @@ body {
             box-shadow: 40vmin 0 9.93107vmin currentColor;
   }
 }
-/*# sourceMappingURL=test.css.map */
+/* end of background handle */
+
+
+
+/* projects section and three js ************* */
+#canvas {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 10;
+}

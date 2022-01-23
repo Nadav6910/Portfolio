@@ -22,7 +22,7 @@
 
             <div class="top-nav-container">
                 <ul class="top-nav-list">
-                    <li class="top-nav-item nav-projects">Projects</li>
+                    <li class="top-nav-item nav-projects"><a href="#canvas">Projects</a></li>
                     <li class="top-nav-item nav-about">About Me</li>
                     <li class="top-nav-item nav-contact">Contact</li>
                 </ul>
@@ -37,7 +37,7 @@
                   <nav id="nav">
                      
                 <ul class="top-nav-list-hamburger">
-                    <li class="top-nav-item nav-projects">Projects</li>
+                    <li class="top-nav-item nav-projects"><a href="#canvas">Projects</a></li>
                     <li class="top-nav-item nav-about">About Me</li>
                     <li class="top-nav-item nav-contact">Contact</li>
                 </ul>
@@ -58,7 +58,7 @@
         </section>
 
         <section class="see-my-work-btn-container">
-            <a href="#">See My Work</a>
+            <a id="view-work-btn" href="#canvas">See My Work</a>
         </section>
 
         <!-- <section class="projects-container">
@@ -91,12 +91,15 @@
         <span></span>
         <span></span>
 
-        
+        <canvas id="canvas"></canvas>
     </div>
     
     <script src="/main.js"></script>
     <script src="/particles.js"></script>
     <script src="/app.js"></script>
+    <script src="./three.min.js"></script>
+    <script src="GLTFLoader.js"></script>
+    <script type="module" src="three.js"></script>
 </body>
 
 </html>
