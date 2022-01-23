@@ -17,7 +17,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 // 	scene.add( gltf.scene );
 //   model = gltf.scene.children[0]
-//   // model.scale.set(0.022, 0.022, 0.022)
+//   model.scale.set(2, 2, 2)
 //   model.position.set(0.001, 0.001, 0.001)
 //   requestAnimationFrame( animate );
 
@@ -46,7 +46,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 // scene.add( cube );
 
 //lights
-const ambient = new THREE.AmbientLight(0x404040, 60)
+const ambient = new THREE.AmbientLight(0x404040, 5)
 scene.add(ambient)
 
 function resizeCanvasToDisplaySize() {
