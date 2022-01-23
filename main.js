@@ -55,6 +55,26 @@ icon.addEventListener('click', function() {
   blue.classList.toggle('slide');
 });
 
+//close manu on select
+const hamburgerManuListItems = document.getElementsByClassName("top-nav-list-hamburger")[0].querySelectorAll('a')
+
+hamburgerManuListItems.forEach((item) => {
+  item.addEventListener("click", function() {
+    icon1.classList.toggle('a');
+    icon2.classList.toggle('c');
+    icon3.classList.toggle('b');
+    if (icon3.style.bottom === "" && icon1.style.bottom === "") {
+      icon1.style.top = "0.1em"
+      icon3.style.bottom = "0.2em"
+    } else {
+      icon1.style.top = ""
+      icon3.style.bottom = ""
+    }
+    nav.classList.toggle('show');
+    blue.classList.toggle('slide');
+  })
+})
+
 
 
 
