@@ -112,6 +112,19 @@ type()
 
 
 
+//loading page handle
+
+window.addEventListener("load", () => {
+  if (document.readyState !== "loading") { 
+    loadingPage = document.getElementById("loading")
+    setTimeout(() => loadingPage.style.display = "none", 1250) 
+    setTimeout(() => document.getElementsByClassName("logo-svg")[0].style.animation = "popInLeft ease 800ms", 1250)
+    setTimeout(() => document.getElementsByClassName("top-nav-list")[0].style.animation = "popInDown ease 1s", 1250)
+  }
+})
+
+
+
 
 
 

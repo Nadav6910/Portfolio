@@ -11,19 +11,32 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 // document.body.appendChild( renderer.domElement );
 
-const loader = new THREE.GLTFLoader();
+// const GLTFloader = new THREE.GLTFLoader();
 
-// loader.load( '../models/skull/scene.gltf', function ( gltf ) {
+// GLTFloader.load( '../models/skull/scene.gltf', function ( gltf ) {
 
 // 	scene.add( gltf.scene );
 //   model = gltf.scene.children[0]
-//   model.scale.set(0.022, 0.022, 0.022)
+//   // model.scale.set(0.022, 0.022, 0.022)
 //   model.position.set(0.001, 0.001, 0.001)
 //   requestAnimationFrame( animate );
 
 // }, undefined, function ( error ) {
 
-// 	console.error( error );
+// 	console.error( error )
+// })
+
+// const loader = new THREE.TextureLoader();
+
+// loader.load( '../assets/circle.png', function ( texture ) {
+
+//     var geometry = new THREE.SphereGeometry();
+
+//     var material = new THREE.MeshBasicMaterial( { map: texture } );
+//     var mesh = new THREE.Mesh( geometry, material );
+//     scene.add( mesh );
+
+// } );
 
 // } );
 
