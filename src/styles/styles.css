@@ -327,7 +327,7 @@ a:hover {
 
 #nav {
   position: fixed;
-  z-index: 980;
+  z-index: 981;
 }
 
 #blue {
@@ -466,6 +466,7 @@ a:hover {
     transition-delay: 50ms;
     z-index: 5;
     opacity: 1;
+    z-index: 980;
   }
   
   .dark-blue.slide {
@@ -533,8 +534,19 @@ a:hover {
     position: absolute;
     width: 100%;
     height: 20em;
+    /* left: 50%; */
+    /* transform: translate(-50%); */
     justify-content: center;
     margin-top: 4em;
+}
+
+/* above screen width of 500px center intoduction div and take out 100% width sides so user can interect with particles */
+@media screen and (min-width: 500px) {
+  .introduction {
+    width: 25em;
+    left: 50%;
+    transform: translate(-50%);
+  }
 }
 
 /* div that holds the introduction animation*/
