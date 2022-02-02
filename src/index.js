@@ -90,7 +90,7 @@ const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
-const titles = ["Creative Front-End Developer", "Full-Stack Engineer", "designer"]
+const titles = ["Creative Front-End Developer", "Full-Stack Engineer", "designer"]
 let count = 0
 let index = 0
 let currentWord = ""

@@ -16,6 +16,9 @@ module.exports = {
     devServer: {static: "./dist"},
     devtool: false,
     plugins: [new miniCssExtractPlugin()],
+    performance: {
+        hints: false
+    },
     optimization: {
         minimizer: [
           new TerserPlugin(),
