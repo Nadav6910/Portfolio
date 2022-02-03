@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import gsap from 'gsap'
 class MouseMeshInteractionHandler {
 	constructor(mesh_name, handler_function) {
 		this.mesh_name = mesh_name;
@@ -147,9 +148,6 @@ class MouseMeshInteraction {
 	}
 }
 
-// const raycaster = new THREE.Raycaster();
-// const mouse = new THREE.Vector2();
-
 // camera and scene set code **********
 
 const scene = new THREE.Scene();
@@ -160,15 +158,6 @@ const canvasContainer = document.getElementById("canvas")
 const renderer = new THREE.WebGLRenderer( {alpha: true, antialias: true, canvas: canvasContainer} );
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
-// function onMouseMove( event ) {
-//   let canvas = document.getElementById("canvas")
-//   let bounds = canvas.getBoundingClientRect()
-// 	// calculate mouse position in normalized device coordinates
-// 	// (-1 to +1) for both components
-// 	mouse.x = ( (event.clientX - bounds.left) / canvas.clientWidth ) * 2 - 1;
-//   mouse.y = - ( (event.clientY - bounds.top) / canvas.clientHeight ) * 2 + 1;
-// }
 
 const mmi = new MouseMeshInteraction(scene, camera);
 
@@ -196,24 +185,17 @@ const mmi = new MouseMeshInteraction(scene, camera);
 //texture loader code ********
 
 const loader = new THREE.TextureLoader();
-let purpleSphere
+let picerSphere
 
-loader.load( './purple.jpg', function ( texture ) {
+loader.load( './picer.jpg', function ( texture ) {
 
     var geometry = new THREE.SphereGeometry();
     var material = new THREE.MeshBasicMaterial( { map: texture } );
-    purpleSphere = new THREE.Mesh( geometry, material );
-    purpleSphere.scale.set(0.8, 0.8, 0.8)
-    purpleSphere.name = 'purple_sphere';
-    scene.add( purpleSphere );
+    picerSphere = new THREE.Mesh( geometry, material );
+    picerSphere.scale.set(0.8, 0.8, 0.8)
+    picerSphere.name = 'picer_sphere';
+    scene.add( picerSphere );
 } );
-
-// } );
-
-// const geometry = new THREE.BoxGeometry();
-// const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );
 
 //lights *****
 const ambient = new THREE.AmbientLight(0x404040, 5)
@@ -231,80 +213,31 @@ function resizeCanvasToDisplaySize() {
       camera.updateProjectionMatrix();
     }
 }
+
 let move = false
 
-mmi.addHandler('purple_sphere', 'click', function(mesh) {
+mmi.addHandler('picer_sphere', 'click', function(mesh) {
 	console.log(mesh);
-  move = true
-
-  if (purpleSphere.position.y > 1.8) {
-    move = false
-  }
+  	move = !move
+	if (move) {
+		gsap.to(picerSphere.position, {z: 1.8, y: 1.3, duration: 1.5})
+		document.getElementById("hello").style.color = "red"
+	} else {
+		gsap.to(picerSphere.position, {z: 0, y: 0, duration: 1.5})
+		document.getElementById("hello").style.color = "black"
+	}
 });
+
 
 function animate() {
     resizeCanvasToDisplaySize()
-    // raycaster.setFromCamera( mouse, camera );
-    // const intersects = raycaster.intersectObjects( scene.children );
     
-    // cube.rotation.x += 0.01;
-    // cube.rotation.y += 0.01;
-    // model.rotation.x += 0.001;
-    // model.rotation.y += 0.001;
-    // model.rotation.z += 0.01;
 
-	if (purpleSphere) {
+	// if (picerSphere) {
 		if (move) {
-		  if (purpleSphere.position.y < 1.9) {
-			purpleSphere.position.y += 0.02
-			purpleSphere.position.z += 0.01
-		  } 
-		  purpleSphere.rotation.y += 0.02
-		} else {
-		  if (purpleSphere.position.y > 0) {   
-			purpleSphere.position.y -= 0.02
-			purpleSphere.position.z -= 0.01
+		  picerSphere.rotation.y += 0.01
 		}
-	  }
-	}
-
-    // purpleSphere.position.z += 0.005;
-    // purpleSphere.position.y += 0.005;
-    // purpleSphere.position.x += 0.005;
-    
-    // console.log(purpleSphere.position)
-
-    // const frustum = new THREE.Frustum()
-    // const matrix = new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse)
-    // frustum.setFromProjectionMatrix(matrix)
-    // if (!frustum.containsPoint(purpleSphere.position)) {
-    //     start = false
-    // }
-    
-    // if (intersects.length > 0) {
-    //   for ( let i = 0; i < intersects.length; i ++ ) {
-        
-    //     if (intersects[i].object.position.y < 1) {
-    //       const distanceFromCamera = 1.8; 
-    //       const target = new THREE.Vector3(0, 2.2, 0);
-    //       target.applyMatrix4(camera.matrixWorld);
-    //       let moveSpeed = 0.03;
-    //       let distance = intersects[i].object.position.distanceTo(target);
-    //       let amount = Math.min(moveSpeed, distance) / distance;
-    //       intersects[i].object.position.lerp(target, amount)
-    //     }
-          
-    //     intersects[i].object.rotation.y += 0.01;
-    //     console.log(intersects[i].object.position.y)
-    //     // console.log(intersects[0].object.uuid)
-    //     document.getElementById("hello").style.color = "red"
-    //   }
-    // } 
-    // else {
-    //   document.getElementById("hello").style.color = "black"
-    // }
-
-    // window.addEventListener('click', onMouseMove );
+	// }
     
     renderer.render( scene, camera );
 

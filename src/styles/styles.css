@@ -15,6 +15,17 @@ html, body {
     scroll-behavior: smooth;
 }
 
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 615px) {
+  #particles-js {
+    height: 180vh !important;
+  }
+
+  .about {
+    margin-top: 140vh !important;
+  }
+}
+
 /* loading section handle */
 .loading {
   position: fixed;
@@ -733,5 +744,65 @@ a:hover {
     opacity: 0;
   }
 
-  /* end of see my work btn code */
+/* end of see my work btn code */
 
+
+
+/* about me section */
+
+/* //about me section main container */
+.about {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  /* overflow: hidden; */
+  width: 100vw;
+  /* height: 100vh; */
+  margin-top: 100vh;
+  background-color: var(--darkgray);
+}
+
+/* container of all p elements in about section */
+.about-p-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40em;
+  height: 100vh;
+  margin-top: 3em;
+}
+
+/* adjusting margin top of section start to not touch the hamburger menu */
+@media screen and (max-width: 754px) {
+  .about-p-container {
+    margin-top: 5.2em;
+  }
+}
+
+/* adjusting margin top of section start to not touch the hamburger menu */
+@media screen and (max-width: 568px) {
+  .about-p-container {
+    justify-content: flex-start;
+  }
+}
+
+/* class for all the p elements in about section */
+.about-disc {
+  color: var(--graywhite);
+  font-size: 2rem;
+  font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
+  margin-bottom: 0;
+  margin-top: 0em;
+  padding: 0.6em;
+}
+
+/* colored words in span */
+.color-words {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg,#f96,#ff5e62);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* awesome background-clip bug fixer!  */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; 
+}

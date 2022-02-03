@@ -161,6 +161,7 @@ window.addEventListener("load", () => {
 
 
 
+
 //svg animation
 // let path = document.querySelector('path')
 // let pathLength = path.getTotalLength()
