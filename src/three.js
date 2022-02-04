@@ -1,5 +1,49 @@
 import * as THREE from 'three';
 import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+//gsap code for DOM elements
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.to('.p1', {
+	scrollTrigger: {trigger: '.p1', toggleActions: "restart none none reset"},
+	x: 350,
+	opacity: 1,
+	duration: 0.7
+})
+
+gsap.to('.p2', {
+	scrollTrigger: {trigger: '.p2', toggleActions: "restart none none reset"},
+	x: 350,
+	opacity: 1,
+	duration: 0.7
+})
+
+gsap.to('.p3', {
+	scrollTrigger: {trigger: '.p3', toggleActions: "restart none none reset"},
+	x: 350,
+	opacity: 1, 
+	duration: 0.7
+})
+
+gsap.to('.tech-icons-header', {
+	scrollTrigger: {trigger: '.tech-icons-header', toggleActions: "restart none none reset"},
+	x: -350,
+	opacity: 1, 
+	duration: 0.7
+})
+
+gsap.to('.tech-icons', {
+	scrollTrigger: {trigger: '.tech-icons', toggleActions: "restart none none reset"},
+	x: -350,
+	opacity: 1, 
+	scale: 1,
+	duration: 0.7
+})
+
+
+
+
 class MouseMeshInteractionHandler {
 	constructor(mesh_name, handler_function) {
 		this.mesh_name = mesh_name;
