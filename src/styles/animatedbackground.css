@@ -5,6 +5,9 @@ body {
 
 .background {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -614,9 +617,9 @@ body {
 
 
 /* projects section and three js ************* */
-#canvas {
+/* #canvas {
   position: absolute;
   width: 100% !important;
   height: 100% !important;
   z-index: 10;
-}
+} */
