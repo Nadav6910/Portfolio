@@ -2,7 +2,6 @@ import "./styles/styles.css"
 import "./styles/animatedbackground.css"
 import "./particles"
 import "./app"
-// import "./three"
 
 // creating animation on hover for top nav bar ***
 
@@ -148,6 +147,11 @@ window.addEventListener("load", () => {
     setTimeout(() => document.getElementsByClassName("top-nav-list")[0].style.animation = "popInDown ease 1s", 1200)
   }
 })
+
+
+
+
+
 
 
 
