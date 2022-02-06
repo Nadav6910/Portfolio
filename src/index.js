@@ -148,6 +148,52 @@ window.addEventListener("load", () => {
   }
 })
 
+// handle hover on enter project btn
+
+if (window.innerWidth > 779) {
+  let imgList = Array.from(document.querySelectorAll(".project-img"));
+  
+  const enterProjectBtn = document.querySelectorAll(".container")
+  
+  enterProjectBtn.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      imgList.forEach(img => {
+        img.style.filter = "brightness(45%)"
+      })
+    })
+    
+    btn.addEventListener('mouseleave', () => {
+      imgList.forEach(img => {
+        img.style.filter = "unset"
+      })
+    })
+  })
+} 
+
+//handle click on enter project btns
+const enterProjectBtn = document.querySelectorAll(".container")
+
+enterProjectBtn.forEach(btn => {
+  
+  if (btn.parentElement.id === "project-1") {
+    btn.addEventListener('click', () => {
+      window.open("https://picer.netlify.app/", "_blank")
+    })
+  }
+
+  if (btn.parentElement.id === "project-2") {
+    btn.addEventListener('click', () => {
+      window.open("http://sapochat.herokuapp.com/", "_blank")
+    })
+  }
+
+  if (btn.parentElement.id === "project-3") {
+      btn.addEventListener('click', () => {
+      window.open("https://condescending-hamilton-dbe12e.netlify.app/", "_blank")
+    })
+  }
+})
+
 
 
 
