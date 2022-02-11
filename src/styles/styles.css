@@ -7,7 +7,7 @@
 /* global rules */
 html, body {
     margin: 0;
-    height: 100%;
+    /* height: 100%; */
     background-color: var(--darkgray);
     overflow: scroll;
     cursor: url("../assets/circle.png"), default;
@@ -952,12 +952,12 @@ input[type=radio] {
 
 /* //about me section main container */
 .about {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100vw;
   margin-top: 100vh;
   background-color: var(--darkgray);
@@ -1107,4 +1107,118 @@ input[type=radio] {
   to {
     background-position: 100% 0;
  }
+}
+
+/* contact form section  */
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5em;
+  height: 82vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: gray;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
+  font-size: 2rem;
+  background: linear-gradient(to right,#ff9966, #ff5e62);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-input {
+  margin-top: 0.5em;
+  height: 2.5em;
+  border-radius: 7px;
+  font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
+  font-size: 1rem;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg,#f96,#ff5e62);
+  border: 4px solid;
+}
+
+.contact-input:focus {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg,#ffa0a0,#583C87);
+  outline: none;
+}
+
+.contact-textarea {
+  margin-top: 0.5em;
+  border-radius: 7px;
+  resize: none;
+  font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
+  font-size: 1rem;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg,#f96,#ff5e62);
+  border: 4px solid;
+}
+
+.contact-textarea:focus {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg,#ffa0a0,#583C87);
+  outline: none;
+}
+
+/* submit button  */
+
+.container-form-btn {
+  display: grid;
+  place-items: center;
+  margin-top: 2em;
+  cursor: inherit;
+}
+
+.btn, .myButton, .myButton::before {
+  /* border: 2px solid; */
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg,#ffa0a0,#583C87);
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 80px;
+  cursor: inherit;
+}
+.myButton {
+  background: linear-gradient(90deg,#ffa0a0,#583C87);
+  border-radius: 8px;
+  color: #ff9966;
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transform: skewX(20deg);
+  cursor: inherit;
+}
+.myButton::before {
+  content: attr(data-label);
+  font-family: Trebuchet MS,Lucida Sans Unicode,Lucida Grande,Lucida Sans,Arial,sans-serif;
+  background: white;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  z-index: -1;
+  transition: all 0.5s ease;
+  border-radius: unset;
+  cursor: inherit;
+}
+.myButton:hover::before {
+  top: -2px;
+  left: -2px;
+}
+.myButton:focus {
+  outline: none;
 }
