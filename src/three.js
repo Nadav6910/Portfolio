@@ -41,6 +41,14 @@ gsap.to('.tech-icons', {
 	duration: 0.7
 })
 
+gsap.to('.contact-form', {
+	scrollTrigger: {trigger: '.contact-form', toggleActions: "restart none none reset"},
+	x: -350,
+	opacity: 1, 
+	scale: 1,
+	duration: 0.7
+})
+
 
 
 

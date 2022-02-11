@@ -1117,15 +1117,17 @@ input[type=radio] {
   align-items: center;
   justify-content: center;
   margin-top: 2.5em;
-  height: 82vh;
+  height: 85vh;
   width: 100vw;
   overflow: hidden;
-  background-color: gray;
+  background-color: #1d1d1d;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 350px;
 }
 
 .form-header {
@@ -1144,7 +1146,7 @@ input[type=radio] {
   font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
   font-size: 1rem;
   border-image-slice: 1;
-  border-image-source: linear-gradient(90deg,#f96,#ff5e62);
+  border-image-source: linear-gradient(to right,#ff9966, #ff5e62);
   border: 4px solid;
 }
 
@@ -1161,7 +1163,7 @@ input[type=radio] {
   font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
   font-size: 1rem;
   border-image-slice: 1;
-  border-image-source: linear-gradient(90deg,#f96,#ff5e62);
+  border-image-source: linear-gradient(to right,#ff9966, #ff5e62);
   border: 4px solid;
 }
 
@@ -1221,4 +1223,71 @@ input[type=radio] {
 }
 .myButton:focus {
   outline: none;
+}
+
+/* footer section  */
+
+/* footer container  */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 20vh;
+  background-color: #272727;
+}
+
+/* social icons section  */
+
+.social-icons-container {
+  -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+}
+.icon-3d {
+  padding: 10px;
+  -webkit-animation: icon3d 200ms 10;
+  animation: icon3d 200ms 10;
+  color: #fff;
+}
+.icon-3d:hover {
+  -webkit-animation: icon3d 200ms infinite;
+  animation: icon3d 200ms infinite;
+}
+@keyframes icon3d {
+  0% {
+    text-shadow: 5px 4px #ffa0a0, -5px -6px #583C87;
+ }
+  25% {
+    text-shadow: -5px -6px #ffa0a0, 5px 4px #583C87;
+ }
+  50% {
+    text-shadow: 5px -4px #ffa0a0, -8px 4px #583C87;
+ }
+  75% {
+    text-shadow: -8px -4px #ffa0a0, -5px -4px #583C87;
+ }
+  100% {
+    text-shadow: -5px 0 #ffa0a0, 5px -4px #583C87;
+ }
+}
+
+/* rights text section  */
+
+.rights {
+    font-size: 1.25rem;
+    color: #8e8e8e;
+    margin-top: 0.5em;
 }
