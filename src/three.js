@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 //gsap code for DOM elements
 gsap.registerPlugin(ScrollTrigger)
 
+//animations for about me section
 gsap.to('.p1', {
 	scrollTrigger: {trigger: '.p1', toggleActions: "restart none none reset"},
 	x: 350,
@@ -26,6 +27,7 @@ gsap.to('.p3', {
 	duration: 0.7
 })
 
+//animations for tech icons section
 gsap.to('.tech-icons-header', {
 	scrollTrigger: {trigger: '.tech-icons-header', toggleActions: "restart none none reset"},
 	x: -350,
@@ -48,6 +50,31 @@ gsap.to('.contact-form', {
 	scale: 1,
 	duration: 0.7
 })
+
+// svg signature animation
+
+// let path = document.getElementById('signature')
+// let pathLength = path.getTotalLength()
+
+// path.style.strokeDasharray = pathLength + ' ' + pathLength
+// path.style.strokeDashoffset = pathLength
+
+// const sleep = (milliseconds) => {
+//     return new Promise(resolve => setTimeout(resolve, milliseconds))
+// }
+
+// gsap.to('.signature', {
+// 	scrollTrigger: {trigger: '.signature', toggleActions: "restart none none reset"},
+// 	onStart: async () => {
+// 		for (var i = pathLength; i > 0; i-=20) {
+// 			await sleep(20)
+// 			path.style.strokeDashoffset = i
+// 		}  
+// 	}
+// })
+
+
+
 
 
 

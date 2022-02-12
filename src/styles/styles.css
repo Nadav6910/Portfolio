@@ -56,6 +56,10 @@ html, body {
   .footer {
     height: 30vh !important;
   }
+
+  #enter-project {
+    margin-top: 3em;
+  }
 }
 
 /* fix for phone tlit horizontal view */
