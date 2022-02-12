@@ -26,6 +26,17 @@ html, body {
   }
 }
 
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 690px) {
+  #contact {
+    height: 160vh !important;
+  }
+
+  .footer {
+    height: 30vh !important;
+  }
+}
+
 /* loading section handle */
 .loading {
   position: fixed;
@@ -1182,6 +1193,12 @@ input[type=radio] {
   cursor: inherit;
 }
 
+@media screen and (max-width: 400px) {
+  .container-form-btn {
+    margin-top: 1.3em;
+  }
+}
+
 .btn, .myButton, .myButton::before {
   /* border: 2px solid; */
   border-image-slice: 1;
@@ -1287,7 +1304,8 @@ input[type=radio] {
 /* rights text section  */
 
 .rights {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: #8e8e8e;
     margin-top: 0.5em;
+    font-family: Gill Sans,Gill Sans MT,Calibri,Trebuchet MS,sans-serif;
 }
