@@ -29,11 +29,71 @@ html, body {
 /* fix for phone tlit horizontal view */
 @media screen and (max-height: 690px) {
   #contact {
-    height: 160vh !important;
+    height: 90vh !important;
+  }
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 650px) {
+  #contact {
+    height: 100vh !important;
+  }
+
+  /* .footer {
+    height: 30vh !important;
+  } */
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 585px) {
+  #contact {
+    height: 110vh !important;
+  }
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 585px) {
+  #contact {
+    height: 110vh !important;
   }
 
   .footer {
     height: 30vh !important;
+  }
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 485px) {
+  #contact {
+    height: 127vh !important;
+  }
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 465px) {
+  #contact {
+    height: 135vh !important;
+  }
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 435px) {
+  #contact {
+    height: 145vh !important;
+  }
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 405px) {
+  #contact {
+    height: 160vh !important;
+  }
+}
+
+/* fix for phone tlit horizontal view */
+@media screen and (max-height: 370px) {
+  #contact {
+    height: 167vh !important;
   }
 }
 
