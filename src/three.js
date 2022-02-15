@@ -10,24 +10,21 @@ gsap.to('.p1', {
 	scrollTrigger: {trigger: '.p1', toggleActions: "restart none none reset"},
 	x: 350,
 	opacity: 1,
-	duration: 2,
-	ease: "elastic.out(1.2, 0.4)"
+	duration: 0.7
 })
 
 gsap.to('.p2', {
 	scrollTrigger: {trigger: '.p2', toggleActions: "restart none none reset"},
 	x: 350,
 	opacity: 1,
-	duration: 2,
-	ease: "elastic.out(1.2, 0.4)"
+	duration: 0.7
 })
 
 gsap.to('.p3', {
 	scrollTrigger: {trigger: '.p3', toggleActions: "restart none none reset"},
 	x: 350,
 	opacity: 1, 
-	duration: 2,
-	ease: "elastic.out(1.2, 0.4)"
+	duration: 0.7
 })
 
 //animations for tech icons section
