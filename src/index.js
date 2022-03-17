@@ -183,7 +183,7 @@ enterProjectBtn.forEach(btn => {
 
   if (btn.parentElement.id === "project-2") {
     btn.addEventListener('click', () => {
-      window.open("http://sapochat.herokuapp.com/", "_blank")
+      window.open("https://quirky-bhabha-3a3b53.netlify.app/", "_blank")
     })
   }
 
