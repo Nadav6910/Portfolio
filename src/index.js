@@ -189,7 +189,7 @@ enterProjectBtn.forEach(btn => {
 
   if (btn.parentElement.id === "project-3") {
       btn.addEventListener('click', () => {
-      window.open("https://condescending-hamilton-dbe12e.netlify.app/", "_blank")
+      window.open("https://chic-entremet-be5027.netlify.app/", "_blank")
     })
   }
 })
